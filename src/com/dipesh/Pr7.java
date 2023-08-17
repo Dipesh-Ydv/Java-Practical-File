@@ -1,18 +1,50 @@
 package com.dipesh;
 
-import java.util.Arrays;
-import java.util.StringTokenizer;
-
 public class Pr7 {
     public static void main(String[] args) {
-        StringTokenizer st = new StringTokenizer("2+3-1*8/4", "+-*/");
-        int[] operand = new int[st.countTokens()];
-        int i = 0;
-        while (st.hasMoreTokens()) {
-            operand[i] = Integer.parseInt(st.nextToken());
-            i++;
+        Bank obj = new Bank("Dipesh Yadav", 4000);
+        obj.display();
+
+        int amt = obj.withdraw(10000);
+
+        if (amt > 0) {
+            System.out.println(amt + " : withdrawn successfully.");
+        } else {
+            System.out.println("Not Sufficient balance.\nTry again with lesser amount.");
         }
 
-        System.out.println(Arrays.toString(operand));
+        obj.deposit(10000000);
+        obj.display();
+
+    }
+    static class Bank {
+        private String name;
+        private int balance;
+
+        public Bank(String name, int balance) {
+            this.name = name;
+            this.balance = balance;
+        }
+
+        public void deposit(int amount) {
+            this.balance += amount;
+            System.out.printf("%d : deposited successfully.", amount);
+            System.out.println("\nCurrent balance: " + balance);
+        }
+
+        public int withdraw(int amount) {
+            if (amount < balance) {
+                balance -= amount;
+                return amount;
+            }
+            return -1;
+        }
+
+        public void display() {
+            System.out.println("---- ACCOUNT DETAILS ----");
+            System.out.println("Account holder name: " + name);
+            System.out.println("Current balance: " + balance);
+        }
+
     }
 }
