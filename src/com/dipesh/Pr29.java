@@ -12,6 +12,7 @@ public class Pr29 {
         fr.setVisible(true);
 
     }
+    // creating our own customized frame class
     static class MyFrame extends Frame {
         // creating reference for various UI components
         Button btn;
