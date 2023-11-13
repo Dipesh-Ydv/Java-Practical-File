@@ -21,7 +21,7 @@ public class Pr40 {
 
 class Producer implements Runnable {
 
-    private Data data;
+    private final Data data;
 
     public Producer(Data data) {
         this.data = data;
@@ -41,7 +41,7 @@ class Producer implements Runnable {
 
 class Consumer implements Runnable {
 
-    private Data data;
+    private final Data data;
 
     public Consumer(Data data) {
         this.data = data;
