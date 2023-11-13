@@ -1,6 +1,5 @@
 package com.dipesh;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Pr35 {
