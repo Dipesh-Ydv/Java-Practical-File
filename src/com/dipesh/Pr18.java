@@ -32,11 +32,10 @@ public class Pr18 {
             if (token.equalsIgnoreCase("true") || token.equalsIgnoreCase("false")) {
                 boolean booleanValue = Boolean.parseBoolean(token);
                 System.out.println("Boolean value: " + booleanValue);
-            }
-
-            if (token.length() > 2 && token.charAt(0) == '\"' && token.charAt(token.length() - 1) == '\"') {
-                String stringValue = token.substring(1, token.length() - 1);
-                System.out.println("String value: " + stringValue);
+            } else if (token.length() == 1) {
+                System.out.println("Character value: " + token);
+            } else {
+                System.out.println("String value: " + token);
             }
         }
     }
