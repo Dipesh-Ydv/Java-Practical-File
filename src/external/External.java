@@ -1,6 +1,6 @@
 package external;
 
-public class Member {
+public class External {
     public String getName() {
         return "Member from external package";
     }
