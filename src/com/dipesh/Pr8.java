@@ -27,8 +27,8 @@ public class Pr8 {
                 case "/" -> firstOperand / secondOperand;
                 default -> result;
             };
-            if (tokenizer.hasMoreTokens()) {
 
+            if (tokenizer.hasMoreTokens()) {
                 op = tokenizer.nextToken().trim();
                 firstOperand = result;
                 secondOperand = Double.parseDouble(tokenizer.nextToken());
